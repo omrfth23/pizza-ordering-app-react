@@ -1,9 +1,10 @@
+/* ==================== FONTS ==================== */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
+/* ==================== ROOT & GLOBAL STYLES ==================== */
 :root {
-  font-family: "Roboto Condensed", Inter, system-ui, Avenir, Helvetica, Arial,
-    sans-serif;
+  font-family: "Roboto Condensed", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #292929;
@@ -28,7 +29,7 @@ body {
   background: #faf7f2;
 }
 
-/* Page Layout */
+/* ==================== PAGE LAYOUT ==================== */
 .page {
   min-height: 100vh;
   display: flex;
@@ -41,38 +42,37 @@ body {
   max-width: 836px;
 }
 
-/* Header */
+/* ==================== HEADER ==================== */
 .topbar {
   background-color: #ce2829;
-  height: 86px;                
+  height: 86px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Order sayfası logosu */
 .orderLogo {
-  height: 28px;                
+  height: 28px;
   display: block;
 }
 
-/* Hero Section */
+/* ==================== HERO SECTION ==================== */
 .heroPizzaWrap {
   width: 100%;
-  max-width: 100%;       
+  max-width: 100%;
   display: flex;
   justify-content: center;
-  overflow: hidden;      
+  overflow: hidden;
 }
 
 .heroPizza {
-  width: 100%;           
-  max-width: 650px;     
+  width: 100%;
+  max-width: 650px;
   height: auto;
   display: block;
 }
 
-/* Breadcrumb Navigation */
+/* ==================== BREADCRUMB NAVIGATION ==================== */
 .breadcrumb {
   text-align: left;
   font-size: 15px;
@@ -85,19 +85,19 @@ body {
 }
 
 .breadcrumbLink {
-  color: #292929;          
+  color: #292929;
   font-weight: 500;
   cursor: pointer;
-  text-decoration: none;  
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .breadcrumbLink:hover {
-  color: #CE2829;          
-  text-decoration: none;  
+  color: #ce2829;
+  text-decoration: none;
 }
 
-/* Product Information */
+/* ==================== PRODUCT INFORMATION ==================== */
 .productTitle {
   text-align: left;
   font-size: 30px;
@@ -135,7 +135,7 @@ body {
   text-align: left;
 }
 
-/* Section Headers */
+/* ==================== SECTION HEADERS ==================== */
 .sectionTitle {
   font-size: 17.6px;
   font-weight: 800;
@@ -148,7 +148,7 @@ body {
   margin-bottom: 13px;
 }
 
-/* Form Elements */
+/* ==================== FORM ELEMENTS ==================== */
 .fieldLabel {
   display: block;
   font-size: 17.6px;
@@ -181,7 +181,16 @@ body {
   min-height: 99px;
 }
 
-/* Two Column Layout */
+.select {
+  width: 100%;
+  padding: 13px 13px;
+  border-radius: 9px;
+  border: 1px solid #e6e0d8;
+  background: #fff;
+  outline: none;
+}
+
+/* ==================== TWO COLUMN LAYOUT ==================== */
 .twoColRow {
   display: grid;
   margin-top: 1.32rem;
@@ -195,7 +204,7 @@ body {
   }
 }
 
-/* Size Selection Pills */
+/* ==================== SIZE SELECTION PILLS ==================== */
 .sizePills {
   display: flex;
   gap: 11px;
@@ -220,17 +229,7 @@ body {
   border-color: #ffe08a;
 }
 
-/* Select Dropdown */
-.select {
-  width: 100%;
-  padding: 13px 13px;
-  border-radius: 9px;
-  border: 1px solid #e6e0d8;
-  background: #fff;
-  outline: none;
-}
-
-/* Ingredients Grid */
+/* ==================== INGREDIENTS GRID ==================== */
 .ingredientGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -243,7 +242,6 @@ body {
   }
 }
 
-/* Ingredient Card */
 .ingCard {
   display: flex;
   align-items: center;
@@ -265,7 +263,7 @@ body {
   font-weight: 700;
 }
 
-/* Order Footer */
+/* ==================== ORDER FOOTER ==================== */
 .footerWrap {
   margin-top: 20px;
   display: grid;
@@ -280,7 +278,7 @@ body {
   }
 }
 
-/* Quantity Selector */
+/* ==================== QUANTITY SELECTOR ==================== */
 .qtyBox {
   display: flex;
   height: 42px;
@@ -315,7 +313,7 @@ body {
   font-size: 15.4px;
 }
 
-/* Order Summary */
+/* ==================== ORDER SUMMARY ==================== */
 .summary {
   border: 1px solid #efe7dd;
   background: #fff;
@@ -346,7 +344,7 @@ body {
   color: #ce2829;
 }
 
-/* Submit Button */
+/* ==================== SUBMIT BUTTON ==================== */
 .orderBtn {
   margin-top: 13px;
   width: 100%;
@@ -363,7 +361,7 @@ body {
   cursor: not-allowed;
 }
 
-/* Success Page */
+/* ==================== SUCCESS PAGE ==================== */
 .successPage {
   min-height: 100vh;
   background: #ce2829;
@@ -407,7 +405,7 @@ body {
   margin-top: 11px;
   color: #f9c74f;
   font-family: 'Satisfy', cursive;
-  font-size: 22px;  
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.55px;
 }
@@ -488,10 +486,10 @@ body {
 }
 
 .successHomeBtn {
-  display: inline-block;          
-  margin: 32px auto 0;            
-  padding: 14px 36px;             
-  background-color: #FDC913;
+  display: inline-block;
+  margin: 32px auto 0;
+  padding: 14px 36px;
+  background-color: #fdc913;
   color: #292929;
   border: none;
   border-radius: 32px;
@@ -507,9 +505,7 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
-
-
-/* Mobile Responsive */
+/* ==================== SUCCESS PAGE RESPONSIVE ==================== */
 @media (max-width: 768px) {
   .successHeader {
     padding: 15px 12px;
@@ -612,12 +608,10 @@ body {
   }
 }
 
-
-/* ==================== HOME PAGE (SINGLE BACKGROUND) ==================== */
-
+/* ==================== HOME PAGE ==================== */
 .home {
   min-height: 100vh;
-  background-color: #ce2829; /* fallback */
+  background-color: #ce2829;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -625,7 +619,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
 
 .homeHeader {
   padding: 20px 16px;
@@ -635,7 +628,6 @@ body {
 .homeLogo {
   height: 30px;
 }
-
 
 .homeMain {
   flex: 1;
@@ -650,7 +642,6 @@ body {
   max-width: 720px;
 }
 
-
 .homeTag {
   color: #f9c74f;
   font-family: 'Satisfy', cursive;
@@ -660,7 +651,6 @@ body {
   font-size: 2.2rem;
 }
 
-
 .homeTitle {
   margin: 0 0 24px;
   font-weight: 300;
@@ -669,10 +659,8 @@ body {
   line-height: 1.05;
 }
 
-
 .homeCta {
-  font-family: "Roboto Condensed", Inter, system-ui, Avenir, Helvetica, Arial,
-    sans-serif;;
+  font-family: "Roboto Condensed", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background: #ffc107;
   border: none;
   border-radius: 999px;
@@ -681,19 +669,13 @@ body {
   font-size: 14px;
   cursor: pointer;
   color: #292929;
-
-
-  transition: 
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background-color 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
-
 
 .homeCta:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
-  background-color: #ffd54f; /* çok hafif açılma */
+  background-color: #ffd54f;
 }
 
 .homeCta:active {
@@ -701,7 +683,7 @@ body {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
 }
 
-/* responsive */
+/* ==================== HOME PAGE RESPONSIVE ==================== */
 @media (max-width: 768px) {
   .homeMain {
     padding-top: 60px;
@@ -716,141 +698,13 @@ body {
   }
 }
 
-/* ==================== FOOTER ==================== */
-.footer {
-  background-color: #292929;
-  color: #ffffff;
-  margin-top: 48px;
-  font-size: 14px;
-}
-
-/* üst alan */
-.footerContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 32px 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 32px;
-}
-
-/* kolon */
-.footerColumn {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-/* logo */
-.footerLogo {
-  width: 160px;
-}
-
-/* başlık */
-.footerTitle {
-  font-size: 16px;
-  font-weight: 700;
-}
-
-/* iletişim */
-.footerContact {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footerItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  color: rgba(255, 255, 255, 0.85);
-  text-decoration: none;
-}
-
-.footerItem:hover {
-  color: #ffffff;
-}
-
-/* ikon */
-.footerIcon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
-
-/* menu */
-.footerMenu {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footerLink {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.footerLink:hover {
-  color: #ffffff;
-}
-
-/* instagram */
-.footerGallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-
-.footerGallery img {
-  width: 100%;
-  border-radius: 6px;
-}
-
-/* alt bar */
-.footerBottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 14px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footerCopyright {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 13px;
-}
-
-.footerSocial {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.7);
-  cursor: pointer;
-}
-
-.footerSocial:hover {
-  color: #ffffff;
-}
-
-/* responsive */
-@media (max-width: 768px) {
-  .footerContainer {
-    padding: 28px 16px;
-    gap: 24px;
-  }
-
-  .footerLogo {
-    width: 140px;
-  }
-}
-
-
 /* ==================== HOME CONTENT BASE ==================== */
 .homeContentWrap {
   background: #faf7f2;
   color: #292929;
 }
 
-/* ==================== NAV ==================== */
+/* ==================== NAVIGATION ==================== */
 .homeNav {
   display: flex;
   justify-content: center;
@@ -882,7 +736,7 @@ body {
   height: 20px;
 }
 
-/* ==================== PROMO ==================== */
+/* ==================== PROMO SECTION ==================== */
 .promoSection {
   display: flex;
   gap: 18px;
@@ -951,8 +805,14 @@ body {
   color: #ce2829;
 }
 
+/* ==================== PROMO RESPONSIVE ==================== */
+@media (max-width: 900px) {
+  .promoSection {
+    flex-direction: column;
+  }
+}
 
-/* ==================== MENU ==================== */
+/* ==================== MENU SECTION ==================== */
 .menuSection {
   max-width: 1400px;
   margin: 60px auto;
@@ -1005,7 +865,7 @@ body {
   height: 24px;
 }
 
-/* ==================== PRODUCTS ==================== */
+/* ==================== PRODUCT GRID ==================== */
 .productGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1038,13 +898,6 @@ body {
   margin-bottom: 12px;
 }
 
-.productMeta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 16px;
-}
-
 .productRating {
   font-weight: 700;
 }
@@ -1059,11 +912,120 @@ body {
   font-size: 18px;
 }
 
-/* ==================== RESPONSIVE ==================== */
-@media (max-width: 900px) {
-  .promoSection {
-    flex-direction: column;
-  }
+/* ==================== FOOTER ==================== */
+.footer {
+  background-color: #292929;
+  color: #ffffff;
+  margin-top: 48px;
+  font-size: 14px;
 }
 
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+}
 
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footerLogo {
+  width: 160px;
+}
+
+.footerTitle {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.footerContact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footerItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+}
+
+.footerItem:hover {
+  color: #ffffff;
+}
+
+.footerIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.footerMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerLink {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footerLink:hover {
+  color: #ffffff;
+}
+
+.footerGallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.footerGallery img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerCopyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+.footerSocial {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.footerSocial:hover {
+  color: #ffffff;
+}
+
+/* ==================== FOOTER RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .footerContainer {
+    padding: 28px 16px;
+    gap: 24px;
+  }
+
+  .footerLogo {
+    width: 140px;
+  }
+}
