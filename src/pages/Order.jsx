@@ -37,7 +37,7 @@ const logo = new URL("../../images/iteration-1-images/logo.svg", import.meta.url
 export default function Order() {
   const navigate = useNavigate();
 
-  // ✅ public/root altındaki images için doğru kullanım
+  
   const pizzaImage = "/images/iteration-2-images/pictures/form-banner.png";
 
   // form state

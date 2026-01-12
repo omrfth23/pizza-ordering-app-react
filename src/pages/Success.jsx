@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Footer from "../components/footer/Footer";
 
 
@@ -9,7 +9,7 @@ const formatTL = (n) =>
 
 export default function Success() {
   const { state } = useLocation();
-
+  const navigate = useNavigate();
 
   const order = state?.order;
 
@@ -74,7 +74,15 @@ export default function Success() {
             </div>
           </div>
         </div>
+          
       </div>
+      <button
+        className="successHomeBtn"
+        onClick={() => navigate("/")}
+        data-cy="success-go-home"
+      >
+        YENİ SİPARİŞ OLUŞTUR
+      </button>
       <Footer />
     </div>
   );
