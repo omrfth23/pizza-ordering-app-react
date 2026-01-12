@@ -10,7 +10,6 @@ export default function Home() {
     import.meta.url
   ).href;
 
-  // Logo
   const logo = new URL(
     "../../images/iteration-1-images/logo.svg",
     import.meta.url
@@ -20,33 +19,45 @@ export default function Home() {
     <>
       <div
         className="home"
+        data-cy="home-page"
         style={{
           backgroundImage: `url(${homeBanner})`,
         }}
       >
-        <header className="homeHeader">
-          <img src={logo} alt="Teknolojik Yemekler" className="homeLogo" />
+        <header className="homeHeader" data-cy="home-header">
+          <img
+            src={logo}
+            alt="Teknolojik Yemekler"
+            className="homeLogo"
+            data-cy="home-logo"
+          />
         </header>
 
         <main className="homeMain">
           <div className="homeContent">
-            <div className="homeTag">fırsatı kaçırma</div>
+            <div className="homeTag" data-cy="home-tag">
+              fırsatı kaçırma
+            </div>
 
-            <h1 className="homeTitle">
+            <h1 className="homeTitle" data-cy="home-title">
               KOD ACIKTIRIR
               <br />
               PIZZA, DOYURUR
             </h1>
 
-            <button className="homeCta" onClick={() => navigate("/order")}>
+            <button
+              className="homeCta"
+              data-cy="home-cta"
+              onClick={() => navigate("/order")}
+            >
               ACIKTIM
             </button>
           </div>
         </main>
       </div>
 
-      <HomeContent />
-      <Footer />
+      <HomeContent data-cy="home-content" />
+      <Footer data-cy="footer" />
     </>
   );
 }

@@ -7,10 +7,13 @@ export default function IngredientsSelector({
   const selectedCount = selected.length;
 
   return (
-    <div className="ingredientGrid">
+    <div className="ingredientGrid" data-cy="ingredients-grid">
       {items.map((item) => {
         const checked = selected.includes(item);
         const limitReached = selectedCount >= max && !checked;
+
+        // Cypress için güvenli id
+        const cyId = `ing-${item.replaceAll(" ", "-")}`;
 
         return (
           <label
@@ -24,6 +27,7 @@ export default function IngredientsSelector({
               checked={checked}
               disabled={limitReached}
               onChange={() => onToggle(item)}
+              data-cy={cyId}
             />
             <span className="ingName">{item}</span>
           </label>

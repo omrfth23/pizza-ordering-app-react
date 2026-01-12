@@ -5,7 +5,7 @@ export default function NoteField({ value, onChange }) {
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder="Sipariş eklemek istediğin bir not var mı?"
+      data-cy="order-note"
     />
   );
 }
-    

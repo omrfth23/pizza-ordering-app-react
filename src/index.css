@@ -84,6 +84,19 @@ body {
   color: #ce2829;
 }
 
+.breadcrumbLink {
+  color: #292929;          
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;  
+  transition: color 0.2s ease;
+}
+
+.breadcrumbLink:hover {
+  color: #CE2829;          
+  text-decoration: none;  
+}
+
 /* Product Information */
 .productTitle {
   text-align: left;
@@ -370,6 +383,7 @@ body {
   margin: 0 auto;
   max-width: 300px;
   height: auto;
+  width: 100%;
 }
 
 .successCenter {
@@ -443,7 +457,8 @@ body {
 }
 
 .successBox {
-  width: 308px;
+  width: 100%;
+  max-width: 308px;
   margin: 0 auto;
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 9px;
@@ -470,6 +485,109 @@ body {
   justify-content: space-between;
   font-size: 13.2px;
   font-weight: 900;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .successHeader {
+    padding: 15px 12px;
+  }
+
+  .successLogo {
+    max-width: 200px;
+  }
+
+  .successCenter {
+    padding: 20px 15px;
+  }
+
+  .successContent {
+    transform: scale(1);
+    margin-bottom: 50px;
+  }
+
+  .successTagline {
+    font-size: 18px;
+    margin-top: 8px;
+  }
+
+  .successTitle {
+    font-size: 36px;
+    letter-spacing: 1.5px;
+    margin: 5px 0 12px;
+  }
+
+  .successDivider {
+    width: 70%;
+    margin: 0 auto 15px;
+  }
+
+  .successPizzaName {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .successInfo {
+    gap: 9px;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .successInfoRow {
+    gap: 7px;
+  }
+
+  .successBox {
+    max-width: 100%;
+    padding: 12px 15px;
+  }
+
+  .successBoxTitle {
+    font-size: 12px;
+    margin-bottom: 9px;
+  }
+
+  .successBoxRow {
+    font-size: 12px;
+    margin-bottom: 7px;
+  }
+
+  .successBoxTotal {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .successLogo {
+    max-width: 180px;
+  }
+
+  .successTagline {
+    font-size: 16px;
+  }
+
+  .successTitle {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+
+  .successPizzaName {
+    font-size: 13px;
+  }
+
+  .successInfo {
+    font-size: 11px;
+  }
+
+  .successBox {
+    padding: 10px 12px;
+  }
+
+  .successBoxTitle,
+  .successBoxRow,
+  .successBoxTotal {
+    font-size: 11px;
+  }
 }
 
 
@@ -925,4 +1043,5 @@ body {
     flex-direction: column;
   }
 }
+
 

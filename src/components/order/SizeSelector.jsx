@@ -2,7 +2,7 @@ export default function SizeSelector({ size, onChange, sizePriceMap }) {
   const sizes = ["S", "M", "L"];
 
   return (
-    <div className="sizePills">
+    <div className="sizePills" data-cy="size-selector">
       {sizes.map((s) => (
         <div
           key={s}
@@ -14,6 +14,7 @@ export default function SizeSelector({ size, onChange, sizePriceMap }) {
             if (e.key === "Enter" || e.key === " ") onChange(s);
           }}
           title={`${s} (${sizePriceMap[s] ?? 0} TL)`}
+          data-cy={`order-size-${s.toLowerCase()}`}
         >
           {s}
         </div>

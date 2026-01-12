@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createPizzaOrder } from "../api/pizza";
+import { Link } from "react-router-dom";
 
 import NameField from "../components/order/NameField";
 import SizeSelector from "../components/order/SizeSelector";
@@ -29,16 +30,15 @@ const BASE_PRICE = 85.5;
 const SIZE_PRICE = { S: -10, M: 0, L: 15 };
 const DOUGH_PRICE = { İnce: 0, Normal: 0, Kalın: 5 };
 const INGREDIENT_PRICE = 5;
-const logo = new URL(
-    "../../images/iteration-1-images/logo.svg",
-    import.meta.url
-  ).href;
+
+const logo = new URL("../../images/iteration-1-images/logo.svg", import.meta.url)
+  .href;
 
 export default function Order() {
   const navigate = useNavigate();
 
-  // UI
-  const pizzaImage = "images\\iteration-2-images\\pictures\\form-banner.png";
+  // ✅ public/root altındaki images için doğru kullanım
+  const pizzaImage = "/images/iteration-2-images/pictures/form-banner.png";
 
   // form state
   const [name, setName] = useState("");
@@ -69,7 +69,6 @@ export default function Order() {
 
   const totalPrice = useMemo(() => unitPrice * quantity, [unitPrice, quantity]);
 
-  // validation
   useEffect(() => {
     const nameValid = name.trim().length >= 3;
     const sizeValid = size !== "";
@@ -78,7 +77,6 @@ export default function Order() {
     setIsValid(nameValid && sizeValid && doughValid && ingredientValid);
   }, [name, size, dough, ingredients]);
 
-  // handlers
   const toggleIngredient = (item) => {
     setIngredients((prev) =>
       prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]
@@ -108,6 +106,9 @@ export default function Order() {
       setIsPosting(true);
       const data = await createPizzaOrder(payload);
       console.log("API Response:", data);
+
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+
       navigate("/success", { state: { api: data, order: payload } });
     } catch (err) {
       console.error("POST Error:", err);
@@ -118,31 +119,43 @@ export default function Order() {
 
   return (
     <>
-      <header className="topbar">
-        <img src={logo} alt="Teknolojik Yemekler" className="orderLogo" />
+      <header className="topbar" data-cy="order-header">
+        <img
+          src={logo}
+          alt="Teknolojik Yemekler"
+          className="orderLogo"
+          data-cy="order-logo"
+        />
       </header>
 
-      <div className="page">
+      <div className="page" data-cy="order-page">
         <div className="container">
-          <div className="heroPizzaWrap">
+          <div className="heroPizzaWrap" data-cy="order-hero">
             <img className="heroPizza" src={pizzaImage} alt="pizza" />
           </div>
 
-          <div className="breadcrumb">
-            Anasayfa - <b>Sipariş Oluştur</b>
+          <div className="breadcrumb" data-cy="breadcrumb">
+            <Link to="/" className="breadcrumbLink" data-cy="breadcrumb-home">
+              Anasayfa
+            </Link>
+            {" "} - <b>Sipariş Oluştur</b>
           </div>
 
-          <div className="productTitle">Position Absolute Acı Pizza</div>
+          <div className="productTitle" data-cy="order-product-title">
+            Position Absolute Acı Pizza
+          </div>
 
-          <div className="productPriceRow">
-            <div className="priceBig">85.50₺</div>
+          <div className="productPriceRow" data-cy="order-product-price-row">
+            <div className="priceBig" data-cy="order-base-price">
+              85.50₺
+            </div>
             <div className="productMeta">
               <span>4.9</span>
               <span>(200)</span>
             </div>
           </div>
 
-          <p className="productDesc">
+          <p className="productDesc" data-cy="order-product-desc">
             Frontend Dev olarak hala position:absolute kullanıyorsan lol çok acı
             pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer
             malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir
@@ -151,19 +164,28 @@ export default function Order() {
             Küçük bir pizzaya bazen pizzetta denir.
           </p>
 
-          <form onSubmit={handleSubmit}>
-            <NameField value={name} onChange={setName} />
+          <form onSubmit={handleSubmit} data-cy="order-form">
+
+            <div data-cy="order-name-field">
+              <NameField value={name} onChange={setName} />
+            </div>
 
             <div className="twoColRow">
-              <div>
+              <div data-cy="order-size-section">
                 <label className="fieldLabel">
                   Boyut Seç <span className="reqStar">*</span>
                 </label>
 
-                <SizeSelector size={size} onChange={setSize} sizePriceMap={SIZE_PRICE} />
+                <div data-cy="order-size-selector">
+                  <SizeSelector
+                    size={size}
+                    onChange={setSize}
+                    sizePriceMap={SIZE_PRICE}
+                  />
+                </div>
               </div>
 
-              <div>
+              <div data-cy="order-dough-section">
                 <label className="fieldLabel">
                   Hamur Seç <span className="reqStar">*</span>
                 </label>
@@ -172,6 +194,7 @@ export default function Order() {
                   className="select"
                   value={dough}
                   onChange={(e) => setDough(e.target.value)}
+                  data-cy="order-dough"
                 >
                   <option value="" disabled>
                     — Hamur Kalınlığı Seç —
@@ -185,32 +208,51 @@ export default function Order() {
               </div>
             </div>
 
-            <div className="sectionTitle">Ek Malzemeler</div>
-            <div className="sectionSub">
+            <div className="sectionTitle" data-cy="order-ingredients-title">
+              Ek Malzemeler
+            </div>
+            <div className="sectionSub" data-cy="order-ingredients-sub">
               En az 4, en fazla 10 malzeme seçebilirsiniz. 5₺
             </div>
 
-            <IngredientsSelector
-              items={INGREDIENTS}
-              selected={ingredients}
-              onToggle={toggleIngredient}
-              max={10}
-            />
+            <div data-cy="order-ingredients-selector">
+              <IngredientsSelector
+                items={INGREDIENTS}
+                selected={ingredients}
+                onToggle={toggleIngredient}
+                max={10}
+              />
+            </div>
 
-            <div className="sectionTitle">Sipariş Notu</div>
-            <NoteField value={note} onChange={setNote} />
+            <div className="sectionTitle" data-cy="order-note-title">
+              Sipariş Notu
+            </div>
 
-            <OrderFooter
-              isValid={isValid}
-              isPosting={isPosting}
-              quantity={quantity}
-              setQuantity={setQuantity}
-              extrasPrice={extrasPrice}
-              totalPrice={totalPrice}
-            />
+            <div data-cy="order-note-field">
+              <NoteField value={note} onChange={setNote} />
+            </div>
+
+            <div data-cy="order-footer">
+              <OrderFooter
+                isValid={isValid}
+                isPosting={isPosting}
+                quantity={quantity}
+                setQuantity={setQuantity}
+                extrasPrice={extrasPrice}
+                totalPrice={totalPrice}
+              />
+            </div>
+
+            <div style={{ display: "none" }}>
+              <span data-cy="order-extras-price">{extrasPrice}</span>
+              <span data-cy="order-total-price">{totalPrice}</span>
+              <span data-cy="order-quantity">{quantity}</span>
+              <span data-cy="order-unit-price">{unitPrice}</span>
+            </div>
           </form>
         </div>
       </div>
+
       <Footer />
     </>
   );
