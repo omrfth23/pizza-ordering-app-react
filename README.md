@@ -120,6 +120,8 @@ pizza-challenge/
 
 A welcoming homepage featuring an attractive banner design and a clear call-to-action (CTA) for ordering.
 
+![Home Page](screenshots/main_menu.png)
+
 ### Order Form
 
 Comprehensive form fields for pizza customization:
@@ -130,9 +132,14 @@ Comprehensive form fields for pizza customization:
 * 🍕 Ingredient selection (4–10 ingredients)
 * 📝 Optional note field
 
+![Order Form](screenshots/order_form.png)
+![Order Form Details](screenshots/order_form1.png)
+
 ### Success Page
 
 A confirmation page verifying that the order has been successfully received.
+
+![Success Page](screenshots/success_menu.png)
 
 ---
 
